@@ -28,7 +28,7 @@ enum class CoreID(
     BEETLE_SUPERGRAFX(
         "beetle_supergrafx",
         "Beetle SuperGrafx",
-        "libbeetle_supergrafx_libretro_android.so",
+        "libmednafen_supergrafx_libretro_android.so",
     ),
     ;
 
