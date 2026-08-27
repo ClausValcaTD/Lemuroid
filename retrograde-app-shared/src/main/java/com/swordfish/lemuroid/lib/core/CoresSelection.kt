@@ -37,6 +37,10 @@ class CoresSelection(
             GameSystem.all()
                 .filter { it.systemCoreConfigs.size > 1 }
 
+        if (configurableSystems.isEmpty()) {
+            return flow { emit(emptyList()) }
+        }
+
         val configurationFlows =
             configurableSystems.map { system ->
                 getSelectedCoreConfigForSystem(system)
@@ -88,15 +92,7 @@ class CoresSelection(
         }.flowOn(Dispatchers.IO)
     }
 
-    // TODO Also get rid of this when desmume is gone
     private fun getDefaultCoreForSystem(system: GameSystem): String {
-        if (system.id == SystemID.NDS) {
-            return if (desmumeMigrationHandler.hasPendingDesmumeSaves()) {
-                CoreID.DESMUME.coreName
-            } else {
-                CoreID.MELONDS.coreName
-            }
-        }
         return system.systemCoreConfigs.first().coreID.coreName
     }
 

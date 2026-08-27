@@ -40,31 +40,11 @@ object ShaderChooser {
 
     private fun getDefaultShaderForSystem(system: GameSystem): ShaderConfig {
         return when (system.id) {
-            SystemID.GBA -> ShaderConfig.LCD
-            SystemID.GBC -> ShaderConfig.LCD
-            SystemID.GB -> ShaderConfig.LCD
-            SystemID.N64 -> ShaderConfig.CRT
-            SystemID.GENESIS -> ShaderConfig.CRT
-            SystemID.SEGACD -> ShaderConfig.CRT
-            SystemID.NES -> ShaderConfig.CRT
-            SystemID.SNES -> ShaderConfig.CRT
-            SystemID.FBNEO -> ShaderConfig.CRT
-            SystemID.SMS -> ShaderConfig.CRT
-            SystemID.PSP -> ShaderConfig.LCD
-            SystemID.NDS -> ShaderConfig.LCD
-            SystemID.GG -> ShaderConfig.LCD
-            SystemID.ATARI2600 -> ShaderConfig.CRT
-            SystemID.PSX -> ShaderConfig.CRT
-            SystemID.MAME2003PLUS -> ShaderConfig.CRT
-            SystemID.ATARI7800 -> ShaderConfig.CRT
+            SystemID.PC_88 -> ShaderConfig.CRT
+            SystemID.PC_98 -> ShaderConfig.CRT
             SystemID.PC_ENGINE -> ShaderConfig.CRT
-            SystemID.LYNX -> ShaderConfig.LCD
-            SystemID.DOS -> ShaderConfig.CRT
-            SystemID.NGP -> ShaderConfig.LCD
-            SystemID.NGC -> ShaderConfig.LCD
-            SystemID.WS -> ShaderConfig.LCD
-            SystemID.WSC -> ShaderConfig.LCD
-            SystemID.NINTENDO_3DS -> ShaderConfig.LCD
+            SystemID.PCE_CD -> ShaderConfig.CRT
+            SystemID.SUPERGRAFX -> ShaderConfig.CRT
         }
     }
 
@@ -263,31 +243,11 @@ object ShaderChooser {
         modern: ShaderConfig,
     ): ShaderConfig {
         return when (system.id) {
-            SystemID.GBA -> upscale16BitsMobile
-            SystemID.GBC -> upscale8BitsMobile
-            SystemID.GB -> upscale8BitsMobile
-            SystemID.N64 -> upscale32Bits
-            SystemID.GENESIS -> upscale16Bits
-            SystemID.SEGACD -> upscale16Bits
-            SystemID.NES -> upscale8Bits
-            SystemID.SNES -> upscale16Bits
-            SystemID.FBNEO -> upscale32Bits
-            SystemID.SMS -> upscale8Bits
-            SystemID.PSP -> modern
-            SystemID.NDS -> upscale32Bits
-            SystemID.GG -> upscale8BitsMobile
-            SystemID.ATARI2600 -> upscale8Bits
-            SystemID.PSX -> upscale32Bits
-            SystemID.MAME2003PLUS -> upscale32Bits
-            SystemID.ATARI7800 -> upscale8Bits
+            SystemID.PC_88 -> upscale16Bits
+            SystemID.PC_98 -> upscale16Bits
             SystemID.PC_ENGINE -> upscale16Bits
-            SystemID.LYNX -> upscale8BitsMobile
-            SystemID.DOS -> upscale32Bits
-            SystemID.NGP -> upscale8BitsMobile
-            SystemID.NGC -> upscale8BitsMobile
-            SystemID.WS -> upscale16BitsMobile
-            SystemID.WSC -> upscale16BitsMobile
-            SystemID.NINTENDO_3DS -> modern
+            SystemID.PCE_CD -> upscale16Bits
+            SystemID.SUPERGRAFX -> upscale16Bits
         }
     }
 }
