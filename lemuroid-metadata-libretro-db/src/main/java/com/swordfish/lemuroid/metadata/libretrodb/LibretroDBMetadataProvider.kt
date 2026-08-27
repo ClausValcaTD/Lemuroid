@@ -163,12 +163,7 @@ class LibretroDBMetadataProvider(private val ovgdbManager: LibretroDBManager) :
         system: GameSystem,
         name: String?,
     ): String? {
-        var systemName = system.libretroFullName
-
-        // Specific mame version don't have any thumbnails in Libretro database
-        if (system.id == SystemID.MAME2003PLUS) {
-            systemName = "MAME"
-        }
+        val systemName = system.libretroFullName
 
         if (name == null) {
             return null
