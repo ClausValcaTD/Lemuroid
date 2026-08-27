@@ -26,13 +26,13 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleFreeDebug
+        run: ./gradlew assembleFreeDynamicDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Spinna-debug
-          path: lemuroid-app/build/outputs/apk/free/debug/*.apk
+          path: lemuroid-app/build/outputs/apk/freeDynamic/debug/*.apk
 
   release:
     name: Release on GitHub
